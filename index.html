@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <h1>JS Documentation</h1>
+      <nav id="navbar"></nav>
+    </header>
+    <main>
+      <section>
+        <header>Introduccion</header>
+        <article></article>
+      </section>
+    </main>
+    <script>
+      function poner(element, data) {
+        let lista = document.createElement("ul");
+        console.log(lista);
+        for (let i = 0; i < data.length; i++) {
+          let li = document.createElement("li");
+          li.innerHTML =
+            "<strong>" + data[i].año + "</strong> - " + data[i].suceso;
+          console.log(data[i]);
+          lista.appendChild(li);
+        }
+        console.log("final list: " + lista);
+        console.log(lista);
+        return lista;
+      }
+
+      let navData = [
+        {
+          title: "Introducción",
+          id: "introduccion",
+        },
+        {
+          title: "¿Qué deberia saber?",
+          id: "Que-deberia-saber",
+        },
+        {
+          title: "JavaScript y Java",
+          id: "javascript-java",
+        },
+        {
+          title: "Hola mundo",
+          id: "hola-mundo",
+        },
+        {
+          title: "Variables",
+          id: "variables",
+        },
+        {
+          title: "Declarando-variables",
+          id: "declarando-variables",
+        },
+        {
+          title: "Alcance de variables",
+          id: "alcance-variables",
+        },
+        {
+          title: "Constantes",
+          id: "constantes",
+        },
+        {
+          title: "Tipos de datos",
+          id: "tipos-datos",
+        },
+        {
+          title: "Condicionales",
+          id: "condicionales",
+        },
+        {
+          title: "Bucle while",
+          id: "bucle-while",
+        },
+        {
+          title: "Funciones",
+          id: "funciones",
+        },
+        {
+          title: "Referencia",
+          id: "referencia",
+        },
+      ];
+
+      let navbar = document.getElementById("navbar");
+      let list = poner(navbar, navData);
+      navbar.appendChild(list);
+    </script>
+  </body>
+</html>
