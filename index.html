@@ -4,91 +4,230 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Document</title>
   </head>
   <body>
-    <header>
-      <h1>JS Documentation</h1>
-      <nav id="navbar"></nav>
-    </header>
-    <main>
-      <section>
-        <header>Introduccion</header>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+    <nav id="navbar">
+      <header>
+        <h1>JS Documentation</h1>
+      </header>
+    </nav>
+    <main id="main-doc">
+      <section class="main-section">
+        <header></header>
         <article></article>
       </section>
     </main>
     <script>
-      function poner(element, data) {
-        let lista = document.createElement("ul");
-        console.log(lista);
-        for (let i = 0; i < data.length; i++) {
-          let li = document.createElement("li");
-          li.innerHTML =
-            "<strong>" + data[i].año + "</strong> - " + data[i].suceso;
-          console.log(data[i]);
-          lista.appendChild(li);
-        }
-        return lista;
-      }
-
-      let navData = [
+      let documentData = [
         {
-          title: "Introducción",
           id: "introduccion",
+          title: "Introducción",
+          content: `
+          <p>
+            JavaScript is a cross-platform, object-oriented scripting language.
+            It is a small and lightweight language. Inside a host environment
+            (for example, a web browser), JavaScript can be connected to the
+            objects of its environment to provide programmatic control over
+            them.
+          </p>
+          <p>
+            JavaScript contains a standard library of objects, such as Array,
+            Date, and Math, and a core set of language elements such as
+            operators, control structures, and statements. Core JavaScript can
+            be extended for a variety of purposes by supplementing it with
+            additional objects; for example:
+          </p>
+          <ul>
+            <li>
+              Client-side JavaScript extends the core language by supplying
+              objects to control a browser and its Document Object Model (DOM).
+              For example, client-side extensions allow an application to place
+              elements on an HTML form and respond to user events such as mouse
+              clicks, form input, and page navigation.
+            </li>
+            <li>
+              Server-side JavaScript extends the core language by supplying
+              objects relevant to running JavaScript on a server. For example,
+              server-side extensions allow an application to communicate with a
+              database, provide continuity of information from one invocation to
+              another of the application, or perform file manipulations on a
+              server.
+            </li>
+          </ul>
+          `,
         },
         {
-          title: "¿Qué deberia saber?",
-          id: "Que-deberia-saber",
+          id: "Que_deberia_saber",
+          title: "Qué deberia saber",
+          content: `
+          <p>Esta guia asume que tienes los siguientes conocimientos básicos</p>
+          <ul>
+            <li>
+              Un entendimiento general de internet y el World Wide Web (WWW)
+            </li>
+            <li>
+              Buen conocimiento trabajando con HyperText Markup Language(HTML)
+            </li>
+            <li>Alguna experiencia programando. Si eres nuevo programando, trata alguno de los siguientes tutoriales.</li>
+          </ul>`,
         },
         {
+          id: "javascript_y_java",
           title: "JavaScript y Java",
-          id: "javascript-java",
+          content: `
+          <p>
+            JavaScript and Java are similar in some ways but fundamentally
+            different in some others. The JavaScript language resembles Java but
+            does not have Java's static typing and strong type checking.
+            JavaScript follows most Java expression syntax, naming conventions
+            and basic control-flow constructs which was the reason why it was
+            renamed from LiveScript to JavaScript.
+          </p>
+          <p>
+            In contrast to Java's compile-time system of classes built by
+            declarations, JavaScript supports a runtime system based on a small
+            number of data types representing numeric, Boolean, and string
+            values. JavaScript has a prototype-based object model instead of the
+            more common class-based object model. The prototype-based model
+            provides dynamic inheritance; that is, what is inherited can vary
+            for individual objects. JavaScript also supports functions without
+            any special declarative requirements. Functions can be properties of
+            objects, executing as loosely typed methods.
+          </p>
+          <p>
+            JavaScript is a very free-form language compared to Java. You do not
+            have to declare all variables, classes, and methods. You do not have
+            to be concerned with whether methods are public, private, or
+            protected, and you do not have to implement interfaces. Variables,
+            parameters, and function return types are not explicitly typed.
+          </p>`,
         },
         {
+          id: "hola_mundo",
           title: "Hola mundo",
-          id: "hola-mundo",
+          content: `
+          <p>
+            To get started with writing JavaScript, open the Scratchpad and
+            write your first "Hello world" JavaScript code:
+          </p>
+          <code>function greetMe(yourName) { alert("Hello " + yourName); }
+            greetMe("World");
+          </code>
+          <p>
+            Select the code in the pad and hit Ctrl+R to watch it unfold in your
+            browser!
+          </p>`,
         },
         {
-          title: "Variables",
           id: "variables",
+          title: "Variables",
+          content: `
+          <p>
+            You use variables as symbolic names for values in your application.
+            The names of variables, called identifiers, conform to certain
+            rules.
+          </p>
+          <p>
+            A JavaScript identifier must start with a letter, underscore (_), or
+            dollar sign ($); subsequent characters can also be digits (0-9).
+            Because JavaScript is case sensitive, letters include the characters
+            "A" through "Z" (uppercase) and the characters "a" through "z"
+            (lowercase).
+          </p>
+          <p>
+            You can use ISO 8859-1 or Unicode letters such as å and ü in
+            identifiers. You can also use the Unicode escape sequences as
+            characters in identifiers. Some examples of legal names are
+            Number_hits, temp99, and _name.
+          </p>`,
         },
         {
-          title: "Declarando-variables",
-          id: "declarando-variables",
+          id: "declarando_variables",
+          title: "Declarando variables",
+          content: `
+          <p>You can declare a variable in three ways:</p>
+          <p>With the keyword var. For example,</p>
+          <code>var x = 42;</code>
+          <p>
+            This syntax can be used to declare both local and global variables.
+          </p>
+          <p>By simply assigning it a value. For example,</p>
+          <code>x=42;</code>
+          <p>
+            This always declares a global variable. It generates a strict
+            JavaScript warning. You shouldn't use this variant.
+          </p>
+          <p>With the keyword let. For example,</p>
+          <code> let x = 42; </code>
+          <p>
+            This syntax can be used to declare a block scope local variable. See
+            Variable scope below.
+          </p>`,
         },
         {
+          id: "alcance_de_variables",
           title: "Alcance de variables",
-          id: "alcance-variables",
+          content: ``,
         },
         {
-          title: "Constantes",
           id: "constantes",
+          title: "Constantes",
+          content: ``,
         },
         {
+          id: "tipos_de_datos",
           title: "Tipos de datos",
-          id: "tipos-datos",
+          content: ``,
         },
         {
-          title: "Condicionales",
           id: "condicionales",
+          title: "Condicionales",
+          content: ``,
         },
         {
+          id: "bucle_while",
           title: "Bucle while",
-          id: "bucle-while",
+          content: ``,
         },
         {
-          title: "Funciones",
           id: "funciones",
+          title: "Funciones",
+          content: ``,
         },
         {
-          title: "Referencia",
-          id: "referencia",
+          id: "referencias",
+          title: "Referencias",
+          content: ``,
         },
       ];
 
+      let container = document.getElementById("main-doc");
+      let elements = documentData.map((data) => {
+        let section = document.createElement("section");
+        section.className += "main-section";
+        section.id += data.id;
+        section.innerHTML = `
+        <header>${data.title}</header>
+        <article>${data.content}</article>
+        `;
+        return section;
+      });
+
+      elements.map((element) => container.appendChild(element));
+
       let navbar = document.getElementById("navbar");
-      let list = poner(navbar, navData);
-      navbar.appendChild(list);
+      let navbarElements = documentData.map((data) => {
+        let navItem = document.createElement("a");
+        navItem.className += "nav-link";
+        navItem.href = `#${data.id}`;
+        navItem.innerHTML = `${data.title}`;
+        return navItem;
+      });
+      navbarElements.map((element) => navbar.appendChild(element));
     </script>
   </body>
 </html>
