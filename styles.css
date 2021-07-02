@@ -3,6 +3,7 @@
 }
 
 body {
+  font-family: cambria serif;
   margin: 0px;
   padding: 0px;
   background-color: var(--background-color);
@@ -23,15 +24,15 @@ header{
   height: 100%;
   border-right: solid;
   border-color: rgba(0, 22, 22, 0.4);
-  ooverflow:enabled;
+  overflow: auto;
 }
 
 #navbar .nav-link{
   display: block;
-  border-top: 1px;
+  border-top: 1px solid black;
   border-bottom: 1px;
-  border-color: black;
-  border-style: solid;
+  text-decoration: none;
+  color: black;
   padding: 10px;
 }
 
