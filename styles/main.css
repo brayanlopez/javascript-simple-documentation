@@ -1,18 +1,19 @@
-:root{
-  --background-color: rgba(255,255,255,1);
+:root {
+  --background-color: rgba(255, 255, 255, 1);
   --border-color: rgba(0, 22, 22, 0.5);
+  --code-background-color: #f7f7f7;
 }
 
 body {
   min-width: 290px;
   color: #4d4e53;
   background-color: #ffffff;
-  font-family: 'Open Sans', Arial, sans-serif;
-  line-height: 1.5;  
+  font-family: "Open Sans", Arial, sans-serif;
+  line-height: 1.5;
   background-color: var(--background-color);
 }
 
-header{
+header {
   color: black;
   font-weight: bold;
   font-size: 1.8em;
@@ -29,7 +30,7 @@ code {
   word-break: normal;
   word-wrap: normal;
   line-height: 2;
-  background-color: #f7f7f7;
+  background-color: var(--code-background-color);
   padding: 15px;
   margin: 10px;
   border-radius: 5px;
@@ -46,18 +47,18 @@ code {
   border-color: var(--border-color);
 }
 
-#navbar header{
+#navbar header {
   font-size: 14pt;
 }
 
-#navbar #links{
+#navbar #links {
   height: 88%;
   padding: 0;
   overflow-y: auto;
   overflow-x: hidden;
 }
 
-#navbar #links .nav-link{
+#navbar #links .nav-link {
   display: block;
   border-top: 1px solid var(--border-color);
   text-decoration: none;
@@ -87,8 +88,6 @@ section li {
   margin: 15px 0px 0px 20px;
 }
 
-
-
 @media only screen and (max-width: 815px) {
   /* For mobile phones: */
   #navbar #links {
@@ -117,7 +116,6 @@ section li {
 }
 
 @media only screen and (max-width: 400px) {
-
   #main-doc {
     margin-left: -10px;
   }
@@ -131,5 +129,3 @@ section li {
     min-width: 233px;
   }
 }
-
-
